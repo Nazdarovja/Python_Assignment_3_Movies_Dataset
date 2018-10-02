@@ -1,7 +1,9 @@
 import os.path
 import sys
+import statistics
 from Utility.Downloader import download_as_file as downloader
-import Statistics as stat
+import pandas as pd
+import os
 
 if __name__ == "__main__":
     try:
@@ -14,7 +16,15 @@ if __name__ == "__main__":
         except Exception as e:
             print("Something went wrong.. : ", e)
             sys.exit(1)
+    
+    # download file from given url as file_name
     downloader(url, file_name)
-    
-    stat.create_statistics(file_name)
-    
+
+    # extract data from downloaded file, as a pandas dataframe
+    movies_metadata = pd.read_csv(file_name, low_memory=False)
+
+    # feed dataframe to sub methods
+
+    # 1
+    num_of_adult_movies = statistics.num_of_adult_movies(movies_metadata)
+    print('Number of movies rated as adult = {}'.format(num_of_adult_movies))
