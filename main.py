@@ -28,3 +28,8 @@ if __name__ == "__main__":
     # 1
     num_of_adult_movies = statistics.num_of_adult_movies(movies_metadata)
     print('Number of movies rated as adult = {}'.format(num_of_adult_movies))
+
+    # 2
+    num_of_animation_movies = statistics.num_of_animation_movies(movies_metadata)
+    print('Number of movies of type animation  = {}'.format(num_of_animation_movies))
+

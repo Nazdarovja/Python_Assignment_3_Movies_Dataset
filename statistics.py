@@ -10,3 +10,11 @@ def num_of_adult_movies(movies_metadata):
     Given a pandas DataFrame, return number of movies classified as adult.
     """
     return len(movies_metadata[movies_metadata["adult"] == "True"])
+
+
+def num_of_animation_movies(movies_metadata):
+    """
+    Given a pandas DataFrame, return number of movies classified as animation.
+    """
+    return len(movies_metadata[movies_metadata["genres"].str.contains("Animation")])
+

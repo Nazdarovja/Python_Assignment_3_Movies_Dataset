@@ -22,9 +22,9 @@ In root of folder, in your terminal of choice, write:
 ## Results
 
 ### tasks:
-1) How many movie are rated adult? = 
+1) How many movie are rated adult? = 9
 
-2) How many movies are listed as animation? = 
+2) How many movies are listed as animation? = 1935
 
 3) Which movie had the highest budget? = 
 
