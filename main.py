@@ -16,7 +16,7 @@ if __name__ == "__main__":
         except Exception as e:
             print("Something went wrong.. : ", e)
             sys.exit(1)
-    
+
     # download file from given url as file_name
     downloader(url, file_name)
 
@@ -30,6 +30,12 @@ if __name__ == "__main__":
     print('Number of movies rated as adult = {}'.format(num_of_adult_movies))
 
     # 2
-    num_of_animation_movies = statistics.num_of_animation_movies(movies_metadata)
-    print('Number of movies of type animation  = {}'.format(num_of_animation_movies))
+    num_of_animation_movies = statistics.num_of_animation_movies(
+        movies_metadata)
+    print('Number of movies of type animation  = {}'.format(
+        num_of_animation_movies))
 
+    # 3
+    movie_with_highest_budget = statistics.movie_with_highest_budget(
+        movies_metadata)
+    print('Movies with the highest budget  = {}'.format(movie_with_highest_budget))

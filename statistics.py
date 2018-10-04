@@ -1,8 +1,6 @@
 from glob import glob
 import numpy as np
-
-# """ glob for .csv files in directory and store name of first occurrence as csv_filename."""
-# csv_filename = glob("./*.csv")[0]
+import pandas as pd
 
 
 def num_of_adult_movies(movies_metadata):
@@ -18,3 +16,16 @@ def num_of_animation_movies(movies_metadata):
     """
     return len(movies_metadata[movies_metadata["genres"].str.contains("Animation")])
 
+
+def movie_with_highest_budget(movies_metadata):
+    """
+    Given a pandas DataFrame, return the movie with the highest budget.
+    """
+    # convert budget numbers from str to numerics, set invalids (strings) to NaN
+    movies_metadata["budget"] = pd.to_numeric(movies_metadata["budget"], errors='coerce') 
+    # sort list of movies by budget, descending, and return top 1 
+    found_movie = movies_metadata.sort_values(by=["budget"], ascending=False).head(1)
+    # strip title & budget and return as formatted tuple
+    title = "".join(found_movie.title)
+    budget = "".join(str(int(found_movie.budget)))
+    return (title, budget)
