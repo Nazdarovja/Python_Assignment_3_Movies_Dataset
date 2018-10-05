@@ -26,7 +26,8 @@ In root of folder, in your terminal of choice, write:
 
 2) How many movies are listed as animation? = 1935
 
-3) Which movie had the highest budget? = 
+3) Which movie had the highest budget? = ('Pirates of the Caribbean: On Stranger Tides', '380000000')
+
 
 4) Which danish movie is most popular? = 
 
