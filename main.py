@@ -39,3 +39,5 @@ if __name__ == "__main__":
     movie_with_highest_budget = statistics.movie_with_highest_budget(
         movies_metadata)
     print('Movies with the highest budget  = {}'.format(movie_with_highest_budget))
+
+    print(statistics.most_popular_danish_movie(movies_metadata))

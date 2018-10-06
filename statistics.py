@@ -29,3 +29,14 @@ def movie_with_highest_budget(movies_metadata):
     title = "".join(found_movie.title)
     budget = "".join(str(int(found_movie.budget)))
     return (title, budget)
+
+def most_popular_danish_movie(movies_metadata):
+    """
+    Given a pandas DataFrame, return the most popular danish movie.
+    """
+    danish_movies = movies_metadata[movies_metadata['production_countries'].str.contains('Denmark', na=False)]
+    movie = danish_movies.sort_values(by=["popularity"], ascending=False).head(1)
+    title = "".join(movie.title)
+    popularity = "".join(movie.popularity)
+    return (title, popularity)
+
