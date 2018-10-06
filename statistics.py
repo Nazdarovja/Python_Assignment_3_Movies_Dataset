@@ -40,3 +40,12 @@ def most_popular_danish_movie(movies_metadata):
     popularity = "".join(movie.popularity)
     return (title, popularity)
 
+def english_movie_with_most_revenue(movies_metadata):
+    """
+    Given a pandas DataFrame, return the english action movie with most revenue.
+    """
+    english_movies = movies_metadata[movies_metadata['production_countries'].str.contains('United Kingdom', na=False) & movies_metadata["genres"].str.contains("Action")]
+    movie = english_movies.sort_values(by=["revenue"], ascending=False).head(1)
+    title = "".join(movie.title)
+    revenue = "".join(str(int(movie.revenue)))
+    return (title, revenue)

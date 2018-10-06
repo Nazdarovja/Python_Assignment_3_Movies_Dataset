@@ -40,4 +40,8 @@ if __name__ == "__main__":
         movies_metadata)
     print('Movies with the highest budget  = {}'.format(movie_with_highest_budget))
 
+    #4
     print(statistics.most_popular_danish_movie(movies_metadata))
+
+    #5
+    print(statistics.english_movie_with_most_revenue(movies_metadata))
