@@ -1,35 +1,27 @@
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import pandas as pd
 import datetime
 import numpy as np
 import statistics
 from mpl_toolkits import mplot3d
 
-#  2005-09-13
-def count_on_release_date(movies_df):
-    ## get movie count for release dates format="%Y-%m-%d"
-    a = pd.to_datetime(movies_df['release_date'], yearfirst=True , errors='coerce')
-    pass
-    
+
+# THIS IS A HOUDINI FIX
 def runtime_and_release(movies_df):
-    release_date = pd.to_datetime(movies_df['release_date'], yearfirst=True , errors='coerce')
-
-    runtime = pd.to_numeric(movies_df['runtime'], errors='raise', downcast='unsigned')  ### not needed....
     
+    movies_df = movies_df[movies_df['release_date'].str.len() == 10]
+
+    release_date = pd.to_datetime(movies_df['release_date'], errors='coerce')
+    runtime = pd.to_numeric(movies_df['runtime'], errors='raise', downcast='unsigned')
+
     df = pd.DataFrame(release_date,runtime)
-    # print(df['release_date'][:1],type(df['release_date'][:1]))
 
-    # df.plot.scatter(x='release_date',y='runtime')
+    df = pd.DataFrame(release_date, runtime).reset_index()
 
-
-    # print(release_date, type(release_date), len(release_date))
-    # print(runtime, type(runtime), len(runtime))
+    df.plot(x='release_date', y='runtime', style='.')
     
-    # to_plot_df = release_date.combine(runtime)
-    
-    # print(to_plot_df)
-    # plt.(release_date, runtime)
-    plt.show()
+
+
 
 def plot_3d_scatter(plt, df, x_col, y_col, z_col):
     '''
@@ -79,7 +71,7 @@ def plot_assignment(df):
     '''
         Andet Plot
     '''
-
+    runtime_and_release(df)
 
     '''
         Tredje Plot
@@ -95,9 +87,11 @@ def plot_assignment(df):
     plot_3d_scatter(plt, df, 'budget', 'buzzword_count', 'revenue')
 
 
-
     # show all plots
     plt.show()
 
 
+
+
+    
 

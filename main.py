@@ -4,7 +4,7 @@ import statistics
 from Utility.Downloader import download_as_file as downloader
 import pandas as pd
 import os
-import plotters
+import plotters 
 
 
 if __name__ == "__main__":

@@ -59,7 +59,7 @@ if __name__ == '__main__':
     print(f'Biggest revenue of {bream[1]} belongs to English Action movie: {bream[0]}')
 
     # 6) Plot: histogram with number of movies according to release day for 'adult' and 'non adult' movies.
-    plotters.count_on_release_date(movies_df)
+    # plotters.count_on_release_date(movies_df)
 
     # 7) Plot: Scatter-Plot with runtime as y value and release date as x value.
     plotters.runtime_and_release(movies_df)
