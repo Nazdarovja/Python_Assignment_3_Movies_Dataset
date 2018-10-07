@@ -63,3 +63,5 @@ if __name__ == '__main__':
 
     # 7) Plot: Scatter-Plot with runtime as y value and release date as x value.
     plotters.runtime_and_release(movies_df)
+
+    
