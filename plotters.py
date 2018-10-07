@@ -6,7 +6,6 @@ import statistics
 from mpl_toolkits import mplot3d
 
 
-# THIS IS A HOUDINI FIX
 def runtime_and_release(movies_df):
     ##Filter random not date data (weird dataset data)
     movies_df = movies_df[movies_df['release_date'].str.len() == 10]
