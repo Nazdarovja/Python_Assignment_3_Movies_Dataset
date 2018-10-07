@@ -16,6 +16,11 @@ def runtime_and_release(movies_df):
 
     runtime = pd.to_numeric(movies_df['runtime'], errors='raise', downcast='unsigned')  ### not needed....
     
+    df = pd.DataFrame(release_date,runtime)
+    # print(df['release_date'][:1],type(df['release_date'][:1]))
+
+    # df.plot.scatter(x='release_date',y='runtime')
+
 
     # print(release_date, type(release_date), len(release_date))
     # print(runtime, type(runtime), len(runtime))
@@ -93,3 +98,6 @@ def plot_assignment(df):
 
     # show all plots
     plt.show()
+
+
+
