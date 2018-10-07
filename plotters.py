@@ -8,20 +8,22 @@ from mpl_toolkits import mplot3d
 
 # THIS IS A HOUDINI FIX
 def runtime_and_release(movies_df):
-    
+    ##Filter random not date data (weird dataset data)
     movies_df = movies_df[movies_df['release_date'].str.len() == 10]
 
+    # create dates
     release_date = pd.to_datetime(movies_df['release_date'], errors='coerce')
+    
+    # create runtime
     runtime = pd.to_numeric(movies_df['runtime'], errors='raise', downcast='unsigned')
 
-    df = pd.DataFrame(release_date,runtime)
+    # create new dataframe from the two Series
+    df = pd.DataFrame(release_date).join(pd.DataFrame(runtime))
 
-    df = pd.DataFrame(release_date, runtime).reset_index()
-
-    df.plot(x='release_date', y='runtime', style='.')
+    # Plot
+    plt.scatter(df.release_date.dt.to_pydatetime(), df.runtime, s=0.5)
+    plt.show()
     
-
-
 
 def plot_3d_scatter(plt, df, x_col, y_col, z_col):
     '''
