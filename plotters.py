@@ -9,16 +9,13 @@ def count_on_release_date(movies_df):
     pass
     
 def runtime_and_release(movies_df):
-    release_date = pd.to_datetime(movies_df['release_date'], yearfirst=True , errors='coerce')
+    release_date = pd.to_datetime(movies_df['release_date'], yearfirst=True , errors='coerce', unit='s')
+    print(release_date)
 
     runtime = pd.to_numeric(movies_df['runtime'], errors='raise', downcast='unsigned')  ### not needed....
     
 
-    # print(release_date, type(release_date), len(release_date))
-    # print(runtime, type(runtime), len(runtime))
-    
-    # to_plot_df = release_date.combine(runtime)
-    
-    # print(to_plot_df)
-    plt.(release_date, runtime)
-    plt.show()
+    df = pd.DataFrame(release_date,runtime)
+
+    df.plot.scatter(x='release_date',y='runtime')
+    df.plot.show()
