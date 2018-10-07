@@ -28,21 +28,21 @@ In root of folder, in your terminal of choice, write:
 
 3) Which movie had the highest budget? = ('Pirates of the Caribbean: On Stranger Tides', '380000000')
 
+4) Which danish movie is most popular? = ('The Lego Batman Movie', '17.070748000000002')
 
-4) Which danish movie is most popular? = 
+5) Which english action movie had the biggest revenue? = ('Avatar', '2787965087')
 
-5) Which english action movie had the biggest revenue? = 
 
 ### plots:
 6) Plot: histogram with number of movies according to release day for 'adult' and 'non adult' movies.
 
-![image6](linkhere)
+![image6](6.png)
 
 7) Plot: Scatter-Plot with runtime as y value and release date as x value.
 
-![image7](linkhere)
+![image7](7.png)
 
 8) Plot: 3D Scatter-Plot with the word frequency for each movie out of the 100 most used 'buzzwords' from all movies overviews (Firstly find 100 most used 'buzzwords' and then find the frequency of these words in each movies overview)
 
-![image8](linkhere)
+![image8](8.png)
 
