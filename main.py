@@ -4,6 +4,8 @@ import statistics
 from Utility.Downloader import download_as_file as downloader
 import pandas as pd
 import os
+import plotters
+
 
 if __name__ == "__main__":
     try:
@@ -45,3 +47,6 @@ if __name__ == "__main__":
 
     #5
     print(statistics.english_movie_with_most_revenue(movies_metadata))
+
+    #6,7,8
+    plotters.plot_assignment(movies_metadata)
