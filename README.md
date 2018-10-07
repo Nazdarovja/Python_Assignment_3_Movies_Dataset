@@ -40,7 +40,7 @@ In root of folder, in your terminal of choice, write:
 
 7) Plot: Scatter-Plot with runtime as y value and release date as x value.
 
-<!-- ![image7](7.png) -->
+![image7](7.png)
 
 8) Plot: 3D Scatter-Plot with the word frequency for each movie out of the 100 most used 'buzzwords' from all movies overviews (Firstly find 100 most used 'buzzwords' and then find the frequency of these words in each movies overview)
 
