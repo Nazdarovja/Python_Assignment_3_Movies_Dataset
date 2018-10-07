@@ -31,8 +31,9 @@ def most_popular_dk_movie(movies_df):
 
 
 def biggest_revenue_english_action_movie(movies_df):
-    
-    movie = movies_df.iloc[pd.to_numeric(movies_df[movies_df['production_countries'].str.contains('United Kingdom', na=False)]['revenue'], errors='coerse', downcast='integer').idxmax()]
+    # Now im just messing with the people reviewing :D sry
+    movie = movies_df.iloc[pd.to_numeric(movies_df[movies_df['production_countries'].str.contains('United Kingdom', na=False) 
+            & movies_df['genres'].str.contains('Action', na=False)]['revenue'], errors='coerse').idxmax()]
     
     return (movie.title, movie.revenue)
 
@@ -52,6 +53,6 @@ if __name__ == '__main__':
     mpdkm = most_popular_dk_movie(movies_df)
     print(f'Most popular danish produced movie is : {mpdkm[0]}, with the rating : {mpdkm[1]}')
     
-    # 5) Which english action movie had the biggest revenue? ################################# TBD MISSING ACTION PART... ups ################
+    # 5) Which english action movie had the biggest revenue? 
     bream = biggest_revenue_english_action_movie(movies_df)
-    print(f'Biggest revenue of {bream[1]} belongs to English movie: {bream[0]}')
+    print(f'Biggest revenue of {bream[1]} belongs to English Action movie: {bream[0]}')
